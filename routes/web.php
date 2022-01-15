@@ -14,4 +14,4 @@
 */
 
 $router->get('/', 'BlockController@block');
-$router->get('/storeDeposits', 'BlockController@storeDeposits');
+$router->get('/construct', 'constructorController@construct');

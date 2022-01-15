@@ -18,7 +18,7 @@ class CreateBlocksTable extends Migration
             $table->BigInteger('data');
             $table->string('previousHash');
             $table->string('hash');
-            $table->timestamps();
+            $table->string('created_at');
         });
     }
 

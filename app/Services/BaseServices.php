@@ -2,20 +2,19 @@
 
 namespace App\Services;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\DB;
 
-//Service
 use App\Services\BlockServices;
 use App\Services\BlockChainServices;
+use App\Services\ValidationServices;
 
 class BaseServices{
 
     public function block($request){
-        $data = 1000;
-        $previousHash = "0";
-        $timestamp = date("Y-m-d h:i:s");
-        $nonce = 0;
+        $block = new BlockServices(1000000, '0', '2022-01-17 12:26:46');
+        $difficulty = 2;
+        return $block->mineBlock($difficulty);
+        return ValidationServices::isChainValid();
         $block = new BlockChainServices;
-        return $block->createNewBlock($data, $previousHash, $timestamp, $nonce);
+        return $block->blockChain($request);
     }
 }
